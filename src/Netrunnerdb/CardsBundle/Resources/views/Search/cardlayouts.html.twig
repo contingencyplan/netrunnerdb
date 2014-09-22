@@ -2,12 +2,12 @@
 <div class="row" style="margin-top:2em">
 	<div class="card-image col-sm-6">
 	{% if card.imagesrc %}
-	   <img src="{% if card.largeimagesrc %}{{ card.largeimagesrc }}{% else %}{{ card.imagesrc }}{% endif %}" class="img-responsive" style="margin:auto">
+	   <img src="{{ card.imagesrc }}" class="img-responsive" style="margin-left:auto">
 	{% else %}
-	   <div class="no-image"><div class="no-image-text">No image</div></div>
+	   <div class="no-image" style="margin-left:auto"><div class="no-image-text">No image</div></div>
 	{% endif %}
 	</div>
-	<div class="card-info col-sm-6">
+	<div class="card-info col-md-4 col-sm-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
     			<h3 class="panel-title card-title">

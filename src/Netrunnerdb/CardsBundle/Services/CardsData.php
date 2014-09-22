@@ -465,23 +465,14 @@ class CardsData
 		$cardinfo['url'] = $this->router->generate('netrunnerdb_netrunner_cards_zoom', array('card_code' => $card->getCode(), '_locale' => $locale), true);
 
 		$cardinfo['imagesrc'] = "";
-		$cardinfo['largeimagesrc'] = "";
 		
 		if($locale != 'en' && file_exists($this->dir . DIRECTORY_SEPARATOR . $locale . DIRECTORY_SEPARATOR . $card->getCode() . ".png"))
 		{
 			$cardinfo['imagesrc'] = "/web/bundles/netrunnerdbcards/images/cards/$locale/". $card->getCode() . ".png";
-			if(file_exists($this->dir . DIRECTORY_SEPARATOR . "$locale-large" . DIRECTORY_SEPARATOR . $card->getCode() . ".png"))
-    		{
-    			$cardinfo['largeimagesrc'] = "/web/bundles/netrunnerdbcards/images/cards/$locale-large/". $card->getCode() . ".png";
-    		}
 		}
 		else if(file_exists($this->dir . DIRECTORY_SEPARATOR . "en" . DIRECTORY_SEPARATOR . $card->getCode() . ".png"))
 		{
 		    $cardinfo['imagesrc'] = "/web/bundles/netrunnerdbcards/images/cards/en/". $card->getCode() . ".png";
-		    if(file_exists($this->dir . DIRECTORY_SEPARATOR . "en-large" . DIRECTORY_SEPARATOR . $card->getCode() . ".png"))
-		    {
-		        $cardinfo['largeimagesrc'] = "/web/bundles/netrunnerdbcards/images/cards/en-large/". $card->getCode() . ".png";
-		    }
 		}
 		
 		if($api) {

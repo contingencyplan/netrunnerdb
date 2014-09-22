@@ -375,7 +375,6 @@ border-radius: 10px;
   }
 }
 div.no-image {
-	margin:auto;
 	border:1px solid silver;
 	border-radius:20px;
 	width:300px;
